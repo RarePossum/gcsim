@@ -37,7 +37,7 @@ func (r *Reactable) TryBurning(a *combat.AttackEvent) bool {
 	}
 	// a.Reacted = true
 
-	if r.Durability[ModifierBurningFuel] >= ZeroDur {
+	if (true) {
 		r.attachBurningFuel(max(dendroDur, r.Durability[ModifierQuicken]), 1)
 		r.attachBurning()
 
@@ -78,7 +78,7 @@ func (r *Reactable) calcBurningDmg(a *combat.AttackEvent) {
 		DamageSrc:        r.self.Key(),
 		Abil:             string(reactions.Burning),
 		AttackTag:        attacks.AttackTagBurningDamage,
-		ICDTag:           attacks.ICDTagBurningDamage,
+		ICDTag:           attacks.ICDTagNone,
 		ICDGroup:         attacks.ICDGroupBurning,
 		StrikeType:       attacks.StrikeTypeDefault,
 		Element:          attributes.Pyro,
