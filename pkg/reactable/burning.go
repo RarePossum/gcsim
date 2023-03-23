@@ -37,7 +37,7 @@ func (r *Reactable) TryBurning(a *combat.AttackEvent) bool {
 	}
 	// a.Reacted = true
 
-	if r.Durability[ModifierBurningFuel] < ZeroDur {
+	if r.Durability[ModifierBurningFuel] >= ZeroDur {
 		r.attachBurningFuel(max(dendroDur, r.Durability[ModifierQuicken]), 1)
 		r.attachBurning()
 
