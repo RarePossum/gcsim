@@ -50,7 +50,7 @@ func (c *char) Skill(p map[string]int) action.ActionInfo {
 		ICDTag:     attacks.ICDTagElementalArt,
 		ICDGroup:   attacks.ICDGroupDefault,
 		StrikeType: attacks.StrikeTypeBlunt,
-		Element:    attributes.Electro,
+		Element:    attributes.Pyro,
 		Durability: 25,
 		Mult:       skill[c.TalentLvlSkill()],
 		FlatDmg:    c.Stat(attributes.EM) * 0.25,
@@ -94,7 +94,7 @@ func (c *char) particleCB(a combat.AttackCB) {
 	}
 	c.AddStatus(particleICDKey, 0.2*60, false)
 	if c.Core.Rand.Float64() < .45 {
-		c.Core.QueueParticle(c.Base.Key.String(), 1, attributes.Electro, c.ParticleDelay)
+		c.Core.QueueParticle(c.Base.Key.String(), 1, attributes.Pyro, c.ParticleDelay)
 	}
 }
 
@@ -112,7 +112,7 @@ func (c *char) bellTick(src int) func() {
 			ICDTag:     attacks.ICDTagElementalArt,
 			ICDGroup:   attacks.ICDGroupDefault,
 			StrikeType: attacks.StrikeTypeDefault,
-			Element:    attributes.Electro,
+			Element:    attributes.Pyro,
 			Durability: 25,
 			Mult:       skilldot[c.TalentLvlSkill()],
 			FlatDmg:    c.a4Damage(),

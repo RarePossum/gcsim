@@ -47,7 +47,7 @@ func (c *char) c4() {
 			ICDTag:     attacks.ICDTagNone,
 			ICDGroup:   attacks.ICDGroupDefault,
 			StrikeType: attacks.StrikeTypeDefault,
-			Element:    attributes.Electro,
+			Element:    attributes.Pyro,
 			Durability: 25,
 			Mult:       0,
 			FlatDmg:    c.MaxHP() * 0.097,
