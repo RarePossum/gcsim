@@ -80,9 +80,10 @@ func NewWeapon(c *core.Core, char *character.CharWrapper, p weapon.WeaponProfile
 				if atk.Info.ActorIndex != char.Index {
 					return nil, false
 				}
-				if atk.Info.AttackTag == attacks.AttackTagElementalArt || atk.Info.AttackTag == attacks.AttackTagElementalArtHold {
-					val[attributes.DmgP] = dmg * float64(stacks)
+				if atk.Info.AttackTag != attacks.AttackTagElementalArt && atk.Info.AttackTag != attacks.AttackTagElementalArtHold {
+					return nil, false
 				}
+				val[attributes.DmgP] = dmg * float64(stacks)
 				return val, true
 			},
 		})
